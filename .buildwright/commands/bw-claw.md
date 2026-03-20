@@ -190,6 +190,13 @@ Reply with feedback to revise.
 
 ## Phase 6: Execute Claw Tasks
 
+### 6.0 Set Up Isolated Workspace (REQUIRED)
+
+Before any claw execution begins, create an isolated git worktree by following
+the instructions in `.buildwright/commands/bw-worktree-start.md`.
+
+All claw execution (single-agent and multi-agent) happens inside the worktree.
+
 ### Single-Agent Mode (Default — Claude Code / OpenCode)
 
 Execute claws sequentially within a single agent session. For each claw:
@@ -276,6 +283,12 @@ If interfaces don't align:
 ## Phase 8: Ship
 
 Run `/bw-ship` which chains: verify → security → review → release.
+
+### 8.1 Finish Development Branch (REQUIRED)
+
+After `/bw-ship` completes, follow the instructions in
+`.buildwright/commands/bw-worktree-finish.md` to merge, create PR, or clean up
+the worktree created in Phase 6.0.
 
 ---
 

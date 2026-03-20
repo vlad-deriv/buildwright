@@ -105,6 +105,13 @@ Understand:
 
 ## Step 3: Implement with TDD
 
+### 3.0 Set Up Isolated Workspace (REQUIRED)
+
+Before any implementation begins, create an isolated git worktree by following
+the instructions in `.buildwright/commands/bw-worktree-start.md`.
+
+All implementation work (TDD, commits) happens inside the worktree.
+
 ### 3.1 Write/Update Tests First
 
 If bug fix:
@@ -236,6 +243,12 @@ Commit types:
 - `chore:` for config/maintenance
 
 ---
+
+### 3.8 Finish Development Branch (REQUIRED)
+
+After committing, follow the instructions in
+`.buildwright/commands/bw-worktree-finish.md` to merge, create PR, or clean up
+the worktree created in Step 3.0.
 
 ## Step 4: Report
 

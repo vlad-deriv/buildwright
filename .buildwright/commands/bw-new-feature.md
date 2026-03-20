@@ -400,6 +400,13 @@ Reply with feedback to revise.
 
 ## Phase 6: Implement (After Approval)
 
+### 6.0 Set Up Isolated Workspace (REQUIRED)
+
+Before any implementation begins, create an isolated git worktree by following
+the instructions in `.buildwright/commands/bw-worktree-start.md`.
+
+All implementation work (milestones, TDD, commits) happens inside the worktree.
+
 ### Detect Implementation Mode
 
 **Single-domain or small scope** → Sequential implementation (below)
@@ -503,6 +510,12 @@ Run `/bw-ship` which chains:
 4. release → commit, push, PR
 
 `/bw-ship` handles autonomous failure internally — if any step fails in autonomous mode, it commits completed work, pushes, creates a failed PR, and exits(1). See ship.md for details.
+
+### 7.1 Finish Development Branch (REQUIRED)
+
+After `/bw-ship` completes, follow the instructions in
+`.buildwright/commands/bw-worktree-finish.md` to merge, create PR, or clean up
+the worktree created in Phase 6.0.
 
 ---
 
